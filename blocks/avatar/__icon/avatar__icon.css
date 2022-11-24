@@ -1,0 +1,13 @@
+.avatar__icon {
+  margin: 0;
+  padding: 0;
+  grid-area: avatar;
+  display: flex;
+}
+
+@media screen and (max-width: 545px) {
+  .avatar__icon {
+    justify-self: center;
+    margin-bottom: 22.25px;
+  }
+}

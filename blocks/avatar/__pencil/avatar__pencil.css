@@ -1,0 +1,14 @@
+.avatar__pencil {
+  margin: auto;
+  padding: 0;
+  max-width: 10px;
+  max-height: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 545px) {
+  .avatar__pencil {
+    width: 5.25px;
+    height: 5.25px;
+  }
+}

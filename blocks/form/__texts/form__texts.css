@@ -1,0 +1,15 @@
+.form__texts {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: solid 1px rgb(0,0,0, .2);
+  padding-bottom: 13px;
+  margin-bottom: 30px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  align-self: stretch;
+}

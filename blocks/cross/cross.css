@@ -1,0 +1,11 @@
+.cross {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  width: 32px;
+  height: 32px;
+  justify-self: end;
+  border: none;
+  align-self: end;
+  background-image: url('../../images/cross.svg');
+}
