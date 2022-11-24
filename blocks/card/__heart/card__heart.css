@@ -2,6 +2,9 @@
   margin:0;
   padding: 0;
   cursor: pointer;
+  height: 22px;
+  width: 19px;
+  align-self: center;
 }
 
 .card__heart:hover {
