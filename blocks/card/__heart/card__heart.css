@@ -13,7 +13,7 @@
 }
 
 .card__heart:active {
-  background-image: url('../../../images/heart-active.svg');
+  background-image: url('../../../images/heart-active.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 18px 22px;

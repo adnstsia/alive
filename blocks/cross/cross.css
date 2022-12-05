@@ -7,5 +7,8 @@
   justify-self: end;
   border: none;
   align-self: end;
-  background-image: url('../../images/cross.svg');
+  background: transparent;
+  background-image: url('../../images/cross.png');
+  background-size: 32px 32px;
+  cursor: pointer;
 }

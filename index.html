@@ -5,103 +5,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
+  <script async src="vendor/popup.js"></script>
   <title>Путешествия по России</title>
 </head>
 
-  <body class="page">
+<body class="page">
 
-    <!--Секция 1 - header---------------------------------------------------------------------------------------------------------------------->
+  <!--Секция 0 - popup---------------------------------------------------------------------------------------------------------------------->
+  <section class="popup">
 
-    <header class="header">
-      <img class="header__logo" src="images/header-logo.svg" alt="Лого Место">
-    </header>
+    <div class="form-close">
 
-    <main>
+      <button class="cross">
+      </button>
+
+      <form class="form">
+        <h2 class="form__heading">Редактировать профиль</h2>
+
+        <fieldset class="form__texts">
+          <input type="text" class="form__item form__item_full-name" id="name" name="name" placeholder="ФИО" required>
+        </fieldset>
+
+        <fieldset class="form__texts">
+          <input type="text" class="form__item form__item_description" id="description" name="description"
+            placeholder="О себе" required>
+        </fieldset>
+
+        <fieldset class="form__handlers">
+          <button type="submit" class="form__button">Сохранить</button>
+        </fieldset>
+
+      </form>
+    </div>
+  </section>
+
+  <!--Секция 1 - header---------------------------------------------------------------------------------------------------------------------->
+
+  <header class="header">
+    <img class="header__logo" src="images/header-logo.svg" alt="Лого Место">
+  </header>
+
+  <main>
 
     <!--Секция 2 - profile---------------------------------------------------------------------------------------------------------------------->
-      <section class="profile">
-        <div class="avatar">
-          <div class="avatar__icon">
-            <img class="avatar__image" src="images/Jack-iv-kusto.png" alt="Фотопортрет Жака-Ив Кусто">
-          </div>
-
-          <h1 class="avatar__title">Жак-Ив Кусто</h1>
-
-          <h2 class="avatar__subtitle">Исследователь океана</h2>
-
-          <div class="avatar__write">
-            <img class="avatar__pencil" src="images/pencil.svg" alt="Карандашик">
-          </div>
-
+    <section class="profile">
+      <div class="avatar">
+        <div class="avatar__icon">
+          <img class="avatar__image" src="images/Jack-iv-kusto.png" alt="Фотопортрет Жака-Ив Кусто">
         </div>
 
-        <div class="subscribe-button">
-          <img class="subscribe-button__pluse" src="images/pluse.svg" alt="Подписаться">
+        <h1 class="avatar__title">Жак-Ив Кусто</h1>
+
+        <h2 class="avatar__subtitle">Исследователь океана</h2>
+
+        <div class="avatar__write">
+          <img class="avatar__pencil" src="images/pencil.svg" alt="Карандашик">
         </div>
 
-      </section>
+      </div>
 
-      <section class="cards">
+      <div class="subscribe-button">
+        <img class="subscribe-button__pluse" src="images/pluse.svg" alt="Подписаться">
+      </div>
+
+    </section>
 
     <!--Секция 2 - cards---------------------------------------------------------------------------------------------------------------------->
-      </section>
 
-      <section class="cards">
+    <section class="cards">
 
-        <div class="card">
-          <img class="card__image" src="images/Karachaevsk.png" alt="Карачаевск - фото гор и храма">
-          <div class="card__bottom">
-            <h2 clsss="card__title">Карачаевск</h2>
-            <img class="card__heart" src="images/heart.svg" alt="Нравится">
-          </div>
+      <div class="card">
+        <img class="card__image" src="images/Karachaevsk.png" alt="Карачаевск - фото гор и храма">
+        <div class="card__bottom">
+          <h2 class="card__title">Карачаевск</h2>
+          <img class="card__heart" src="images/heart.svg" alt="Нравится">
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card__image" src="images/Elbrus.png" alt="Карачаевск - фото гор и храма">
-          <div class="card__bottom">
-            <h2 clsss="card__title">Гора Эльбрус</h2>
-            <img class="card__heart" src="images/heart.svg" alt="Нравится">
-          </div>
+      <div class="card">
+        <img class="card__image" src="images/Elbrus.png" alt="Карачаевск - фото гор и храма">
+        <div class="card__bottom">
+          <h2 class="card__title">Гора Эльбрус</h2>
+          <img class="card__heart" src="images/heart.svg" alt="Нравится">
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card__image" src="images/Dombay.png" alt="Карачаевск - фото гор и храма">
-          <div class="card__bottom">
-            <h2 clsss="card__title">Домбай</h2>
-            <img class="card__heart" src="images/heart.svg" alt="Нравится">
-          </div>
+      <div class="card">
+        <img class="card__image" src="images/Dombay.png" alt="Карачаевск - фото гор и храма">
+        <div class="card__bottom">
+          <h2 class="card__title">Домбай</h2>
+          <img class="card__heart" src="images/heart.svg" alt="Нравится">
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card__image" src="images/Elbrus.png" alt="Карачаевск - фото гор и храма">
-          <div class="card__bottom">
-            <h2 clsss="card__title">Гора Эльбрус</h2>
-            <img class="card__heart" src="images/heart.svg" alt="Нравится">
-          </div>
+      <div class="card">
+        <img class="card__image" src="images/Elbrus.png" alt="Карачаевск - фото гор и храма">
+        <div class="card__bottom">
+          <h2 class="card__title">Гора Эльбрус</h2>
+          <img class="card__heart" src="images/heart.svg" alt="Нравится">
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card__image" src="images/Dombay.png" alt="Карачаевск - фото гор и храма">
-          <div class="card__bottom">
-            <h2 clsss="card__title">Домбай</h2>
-            <img class="card__heart" src="images/heart.svg" alt="Нравится">
-          </div>
+      <div class="card">
+        <img class="card__image" src="images/Dombay.png" alt="Карачаевск - фото гор и храма">
+        <div class="card__bottom">
+          <h2 class="card__title">Домбай</h2>
+          <img class="card__heart" src="images/heart.svg" alt="Нравится">
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card__image" src="images/Karachaevsk.png" alt="Карачаевск - фото гор и храма">
-          <div class="card__bottom">
-            <h2 clsss="card__title">Карачаево-Ч...</h2>
-            <img class="card__heart" src="images/heart.svg" alt="Нравится">
-          </div>
+      <div class="card">
+        <img class="card__image" src="images/Karachaevsk.png" alt="Карачаевск - фото гор и храма">
+        <div class="card__bottom">
+          <h2 class="card__title">Карачаево-Черкессия</h2>
+          <img class="card__heart" src="images/heart.svg" alt="Нравится">
         </div>
+      </div>
 
-      </section>
-    </main>
+    </section>
+  </main>
 
-    <footer class="footer">
-      <p class="footer__author">© 2020 Mesto Russia</p>
-    </footer>
+  <footer class="footer">
+    <p class="footer__author">© 2020 Mesto Russia</p>
+  </footer>
 
-  </body>
+</body>
+
 </html>

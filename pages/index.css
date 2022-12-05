@@ -40,3 +40,21 @@
 /*Секция footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__author/footer__author.css);
+
+/*popup*/
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__opened/popup__opened.css);
+
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__button/form__button.css);
+@import url(../blocks/form/__handlers/form__handlers.css);
+@import url(../blocks/form/__heading/form__heading.css);
+@import url(../blocks/form/__item/form__item.css);
+@import url(../blocks/form/__item/_description/form__item_description.css);
+@import url(../blocks/form/__item/_full-name/form__item_full-name.css);
+@import url(../blocks/form/__texts/form__texts.css);
+
+@import url(../blocks/form-close/form-close.css);
+
+@import url(../blocks/cross/cross.css);
+@import url(../blocks/cross/__image/cross__image.css);

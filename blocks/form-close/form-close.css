@@ -1,7 +1,13 @@
 .form-close {
-  margin: 0;
+  margin: auto;
   padding: 0;
   display: flex;
   flex-direction: column;
   width: 470px;
+}
+
+@media screen and (max-width: 484px) {
+  .form-close {
+    width: 310px;
+  }
 }
