@@ -5,39 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <script async src="vendor/popup.js"></script>
   <title>Путешествия по России</title>
 </head>
 
 <body class="page">
-
-  <!--Секция 0 - popup---------------------------------------------------------------------------------------------------------------------->
-  <section class="popup">
-
-    <div class="form-close">
-
-      <button class="cross">
-      </button>
-
-      <form class="form">
-        <h2 class="form__heading">Редактировать профиль</h2>
-
-        <fieldset class="form__texts">
-          <input type="text" class="form__item form__item_full-name" id="name" name="name" placeholder="ФИО" required>
-        </fieldset>
-
-        <fieldset class="form__texts">
-          <input type="text" class="form__item form__item_description" id="description" name="description"
-            placeholder="О себе" required>
-        </fieldset>
-
-        <fieldset class="form__handlers">
-          <button type="submit" class="form__button">Сохранить</button>
-        </fieldset>
-
-      </form>
-    </div>
-  </section>
 
   <!--Секция 1 - header---------------------------------------------------------------------------------------------------------------------->
 
@@ -58,15 +29,13 @@
 
         <h2 class="avatar__subtitle">Исследователь океана</h2>
 
-        <div class="avatar__write">
-          <img class="avatar__pencil" src="images/pencil.svg" alt="Карандашик">
-        </div>
+        <button class="avatar__edit" type="button">
+        </button>
 
       </div>
 
-      <div class="subscribe-button">
-        <img class="subscribe-button__pluse" src="images/pluse.svg" alt="Подписаться">
-      </div>
+      <button class="add-button" type="button">
+      </button>
 
     </section>
 
@@ -78,47 +47,53 @@
         <img class="card__image" src="images/Karachaevsk.png" alt="Карачаевск - фото гор и храма">
         <div class="card__bottom">
           <h2 class="card__title">Карачаевск</h2>
-          <img class="card__heart" src="images/heart.svg" alt="Нравится">
+          <button class="card__heart" type="button">
+          </button>
         </div>
       </div>
 
       <div class="card">
-        <img class="card__image" src="images/Elbrus.png" alt="Карачаевск - фото гор и храма">
+        <img class="card__image" src="images/Elbrus.png" alt="Гора Эльбрус на рассвете">
         <div class="card__bottom">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <img class="card__heart" src="images/heart.svg" alt="Нравится">
+          <button class="card__heart" type="button">
+          </button>
         </div>
       </div>
 
       <div class="card">
-        <img class="card__image" src="images/Dombay.png" alt="Карачаевск - фото гор и храма">
+        <img class="card__image" src="images/Dombay.png" alt="Домбай: лес и горы в пасмурную погоду">
         <div class="card__bottom">
           <h2 class="card__title">Домбай</h2>
-          <img class="card__heart" src="images/heart.svg" alt="Нравится">
+          <button class="card__heart" type="button">
+          </button>
         </div>
       </div>
 
       <div class="card">
-        <img class="card__image" src="images/Elbrus.png" alt="Карачаевск - фото гор и храма">
+        <img class="card__image" src="images/Elbrus.png" alt="Гора Эльбрус на рассвете">
         <div class="card__bottom">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <img class="card__heart" src="images/heart.svg" alt="Нравится">
+          <button class="card__heart" type="button">
+          </button>
         </div>
       </div>
 
       <div class="card">
-        <img class="card__image" src="images/Dombay.png" alt="Карачаевск - фото гор и храма">
+        <img class="card__image" src="images/Dombay.png" alt="Домбай: лес и горы в пасмурную погоду">
         <div class="card__bottom">
           <h2 class="card__title">Домбай</h2>
-          <img class="card__heart" src="images/heart.svg" alt="Нравится">
+          <button class="card__heart" type="button">
+          </button>
         </div>
       </div>
 
       <div class="card">
-        <img class="card__image" src="images/Karachaevsk.png" alt="Карачаевск - фото гор и храма">
+        <img class="card__image" src="images/Karachaevsk.png" alt="Карачаево-Черкессия - фото гор и храма">
         <div class="card__bottom">
           <h2 class="card__title">Карачаево-Черкессия</h2>
-          <img class="card__heart" src="images/heart.svg" alt="Нравится">
+          <button class="card__heart" type="button">
+          </button>
         </div>
       </div>
 
@@ -129,6 +104,34 @@
     <p class="footer__author">© 2020 Mesto Russia</p>
   </footer>
 
+  <!--Секция 0 - popup---------------------------------------------------------------------------------------------------------------------->
+  <section class="popup">
+
+    <div class="popup__container">
+
+      <button class="popup__close" type="button">
+      </button>
+
+      <form class="form" name="profilForm">
+        <h2 class="form__heading">Редактировать профиль</h2>
+
+        <fieldset class="form__texts">
+          <input type="text" class="form__full-name" id="name" name="name" placeholder="ФИО" required>
+        </fieldset>
+
+        <fieldset class="form__texts">
+          <input type="text" class="form__description" id="description" name="description" placeholder="О себе"
+            required>
+        </fieldset>
+
+        <fieldset class="form__handlers">
+          <button type="submit" class="form__button">Сохранить</button>
+        </fieldset>
+
+      </form>
+    </div>
+  </section>
+  <script async src="scripts/popup.js"></script>
 </body>
 
 </html>

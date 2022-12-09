@@ -1,6 +1,7 @@
 .card__title {
-  max-width: 182px;
+  max-width: 246px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  align-self: center;
 }

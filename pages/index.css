@@ -20,12 +20,10 @@
 @import url(../blocks/avatar/__image/avatar__image.css);
 @import url(../blocks/avatar/__title/avatar__title.css);
 @import url(../blocks/avatar/__subtitle/avatar__subtitle.css);
-@import url(../blocks/avatar/__write/avatar__write.css);
-@import url(../blocks/avatar/__pencil/avatar__pencil.css);
+@import url(../blocks/avatar/__edit/avatar__edit.css);
 
 /*Блок subscribe-button*/
-@import url(../blocks/subscribe-button/subscribe-button.css);
-@import url(../blocks/subscribe-button/__pluse/subscribe-button__pluse.css);
+@import url(../blocks/add-button/add-button.css);
 
 /*Секция cards*/
 @import url(../blocks/cards/cards.css);
@@ -44,17 +42,13 @@
 /*popup*/
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__close/popup__close.css);
 
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__button/form__button.css);
 @import url(../blocks/form/__handlers/form__handlers.css);
 @import url(../blocks/form/__heading/form__heading.css);
-@import url(../blocks/form/__item/form__item.css);
-@import url(../blocks/form/__item/_description/form__item_description.css);
-@import url(../blocks/form/__item/_full-name/form__item_full-name.css);
+@import url(../blocks/form/__full-name/form__full-name.css);
+@import url(../blocks/form/__description/form__idescription.css);
 @import url(../blocks/form/__texts/form__texts.css);
-
-@import url(../blocks/form-close/form-close.css);
-
-@import url(../blocks/cross/cross.css);
-@import url(../blocks/cross/__image/cross__image.css);

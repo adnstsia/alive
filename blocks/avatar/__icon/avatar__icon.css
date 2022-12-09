@@ -3,11 +3,12 @@
   padding: 0;
   grid-area: avatar;
   display: flex;
+  justify-self: start;
 }
 
 @media screen and (max-width: 545px) {
   .avatar__icon {
     justify-self: center;
-    margin-bottom: 22.25px;
+    margin-bottom: 25.25px;
   }
 }

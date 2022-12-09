@@ -3,9 +3,8 @@
   padding: 0;
   display: grid;
   grid-column-gap: 18px;
-  grid-row-gap: 16px;
-  grid-template-columns: 168.75px 294px 24px;
-  grid-template-rows: 63.75px 63.75px;
+  grid-row-gap: 8px;
+  grid-template-columns: 128.25px 294px 24px;
   grid-template-areas:
   'avatar title pencil'
   'avatar subtitle .';

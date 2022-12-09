@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   grid-area: subtitle;
-  font-family: 'Inter';
+  font-family: 'Inter', 'Helvatica', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

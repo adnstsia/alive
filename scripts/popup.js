@@ -7,23 +7,22 @@
 // .form__button
 
 const popup = document.querySelector('.popup');
-const popupOpened = document.querySelector('.popup__opened');
-const cross = document.querySelector('.cross');
-const formButton = document.querySelector('.form');
+const closePopup = document.querySelector('.popup__close');
+const saveChanges = document.querySelector('.form');
+const avatarEdit = document.querySelector('.avatar__edit');
 
-let avatarWrite = document.querySelector('.avatar__write');
-let fullName = document.querySelector('.form__item_full-name');
-let description = document.querySelector('.form__item_description');
+let fullName = document.querySelector('.form__full-name');
+let description = document.querySelector('.form__description');
 let avatarName = document.querySelector('.avatar__title');
 let avatarDescription = document.querySelector('.avatar__subtitle');
 
-function open() {
+function openPopup() {
   popup.classList.add('popup__opened');
   fullName.value = avatarName.textContent;
   description.value = avatarDescription.textContent;
 }
 
-function close() {
+function leavePopup() {
   popup.classList.remove('popup__opened');
 }
 
@@ -31,9 +30,9 @@ function formSubmit (evt) {
   evt.preventDefault();
   avatarName.textContent = fullName.value;
   avatarDescription.textContent = description.value;
-  close();
+  leavePopup();
 }
 
-avatarWrite.addEventListener('click', open);
-cross.addEventListener('click', close);
-formButton.addEventListener('submit', formSubmit);
+avatarEdit.addEventListener('click', openPopup);
+closePopup.addEventListener('click', leavePopup);
+saveChanges.addEventListener('submit', formSubmit);

@@ -2,20 +2,19 @@
   margin:0;
   padding: 0;
   cursor: pointer;
-  height: 22px;
-  width: 19px;
+  height: 32px;
+  width: 32px;
   align-self: center;
   z-index: 1;
+  transition: opacity linear .3s;
+  background-image: url('../../../images/heart.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin-left: 24px;
+  border: 0;
 }
 
 .card__heart:hover {
   opacity: .5;
-}
-
-.card__heart:active {
-  background-image: url('../../../images/heart-active.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 18px 22px;
-  opacity: 1;
 }
