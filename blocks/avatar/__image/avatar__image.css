@@ -5,4 +5,14 @@
   padding: 0;
   object-fit: cover;
   border-radius: 100%;
+  grid-area: avatar;
+  display: flex;
+  justify-self: start;
+}
+
+@media screen and (max-width: 545px) {
+  .avatar__image {
+    justify-self: center;
+    margin-bottom: 25.25px;
+  }
 }

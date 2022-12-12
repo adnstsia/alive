@@ -17,9 +17,9 @@
   .avatar__title {
     margin-bottom: 14px;
     justify-self: center;
-    font-family: 'Inter';
     font-size: 27px;
     line-height: 33px;
     text-align: center;
+    margin-left: 28px;
   }
 }

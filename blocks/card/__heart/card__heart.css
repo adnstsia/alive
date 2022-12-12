@@ -13,6 +13,7 @@
   background-color: transparent;
   margin-left: 24px;
   border: 0;
+  outline: none;
 }
 
 .card__heart:hover {

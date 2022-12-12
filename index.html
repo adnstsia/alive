@@ -19,11 +19,10 @@
   <main>
 
     <!--Секция 2 - profile---------------------------------------------------------------------------------------------------------------------->
+
     <section class="profile">
       <div class="avatar">
-        <div class="avatar__icon">
-          <img class="avatar__image" src="images/Jack-iv-kusto.png" alt="Фотопортрет Жака-Ив Кусто">
-        </div>
+        <img class="avatar__image" src="images/Jack-iv-kusto.png" alt="Фотопортрет Жака-Ив Кусто">
 
         <h1 class="avatar__title">Жак-Ив Кусто</h1>
 
@@ -105,6 +104,7 @@
   </footer>
 
   <!--Секция 0 - popup---------------------------------------------------------------------------------------------------------------------->
+
   <section class="popup">
 
     <div class="popup__container">
@@ -115,23 +115,17 @@
       <form class="form" name="profilForm">
         <h2 class="form__heading">Редактировать профиль</h2>
 
-        <fieldset class="form__texts">
-          <input type="text" class="form__full-name" id="name" name="name" placeholder="ФИО" required>
-        </fieldset>
+        <input type="text" class="form__texts form__texts_full-name" id="name" name="name" placeholder="ФИО" required>
 
-        <fieldset class="form__texts">
-          <input type="text" class="form__description" id="description" name="description" placeholder="О себе"
-            required>
-        </fieldset>
+        <input type="text" class="form__texts form__texts_description" id="description" name="description"
+          placeholder="О себе" required>
 
-        <fieldset class="form__handlers">
-          <button type="submit" class="form__button">Сохранить</button>
-        </fieldset>
+        <button type="submit" class="form__button">Сохранить</button>
 
       </form>
     </div>
   </section>
-  <script async src="scripts/popup.js"></script>
+  <script async src="scripts/index.js"></script>
 </body>
 
 </html>

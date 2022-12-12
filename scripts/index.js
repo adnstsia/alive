@@ -11,8 +11,8 @@ const closePopup = document.querySelector('.popup__close');
 const saveChanges = document.querySelector('.form');
 const avatarEdit = document.querySelector('.avatar__edit');
 
-let fullName = document.querySelector('.form__full-name');
-let description = document.querySelector('.form__description');
+let fullName = document.querySelector('.form__texts_full-name');
+let description = document.querySelector('.form__texts_description');
 let avatarName = document.querySelector('.avatar__title');
 let avatarDescription = document.querySelector('.avatar__subtitle');
 

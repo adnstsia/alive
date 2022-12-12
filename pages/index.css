@@ -16,7 +16,6 @@
 
 /*Блок avatar*/
 @import url(../blocks/avatar/avatar.css);
-@import url(../blocks/avatar/__icon/avatar__icon.css);
 @import url(../blocks/avatar/__image/avatar__image.css);
 @import url(../blocks/avatar/__title/avatar__title.css);
 @import url(../blocks/avatar/__subtitle/avatar__subtitle.css);
@@ -47,8 +46,7 @@
 
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__button/form__button.css);
-@import url(../blocks/form/__handlers/form__handlers.css);
 @import url(../blocks/form/__heading/form__heading.css);
-@import url(../blocks/form/__full-name/form__full-name.css);
-@import url(../blocks/form/__description/form__idescription.css);
 @import url(../blocks/form/__texts/form__texts.css);
+@import url(../blocks/form/__texts/_full-name/form__texts_full-name.css);
+@import url(../blocks/form/__texts/_description/form__texts_description.css);
