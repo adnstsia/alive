@@ -48,5 +48,5 @@
 @import url(../blocks/form/__button/form__button.css);
 @import url(../blocks/form/__heading/form__heading.css);
 @import url(../blocks/form/__content/form__content.css);
-@import url(../blocks/form/__content/form__content_full-name.css);
-@import url(../blocks/form/__content/form__content_description.css);
+@import url(../blocks/form/__content/_type/form__content_type_full-name.css);
+@import url(../blocks/form/__content/_type/form__content_type_description.css);
