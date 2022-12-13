@@ -15,8 +15,8 @@
   border: 0;
   outline: none;
   position: absolute;
-  right: -253px;
-  top: -221px;
+  right: -40px;
+  top: -40px;
 }
 
 .popup__close:hover {
@@ -28,9 +28,8 @@
     width: 20px;
     height: 20px;
     background-size: 20px 20px;
-    margin-right: 19px;
     right: 0;
-    top: -159px;
+    top: -37px;
   }
 }
 

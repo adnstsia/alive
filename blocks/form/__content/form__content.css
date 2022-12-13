@@ -1,4 +1,4 @@
-.form__texts {
+.form__content {
   margin: 0;
   padding: 0;
   border: 0;
@@ -12,4 +12,6 @@
   line-height: 17px;
   color: #000000;
   align-self: stretch;
+  outline: none;
+  background-color: transparent;
 }

@@ -8,22 +8,22 @@
 
 const popup = document.querySelector('.popup');
 const closePopup = document.querySelector('.popup__close');
-const saveChanges = document.querySelector('.form');
+const profileForm = document.querySelector('.form');
 const avatarEdit = document.querySelector('.avatar__edit');
 
-let fullName = document.querySelector('.form__texts_full-name');
-let description = document.querySelector('.form__texts_description');
+let fullName = document.querySelector('.form__content_full-name');
+let description = document.querySelector('.form__content_description');
 let avatarName = document.querySelector('.avatar__title');
 let avatarDescription = document.querySelector('.avatar__subtitle');
 
 function openPopup() {
-  popup.classList.add('popup__opened');
+  popup.classList.add('popup_opened');
   fullName.value = avatarName.textContent;
   description.value = avatarDescription.textContent;
 }
 
 function leavePopup() {
-  popup.classList.remove('popup__opened');
+  popup.classList.remove('popup_opened');
 }
 
 function formSubmit (evt) {
@@ -35,4 +35,4 @@ function formSubmit (evt) {
 
 avatarEdit.addEventListener('click', openPopup);
 closePopup.addEventListener('click', leavePopup);
-saveChanges.addEventListener('submit', formSubmit);
+profileForm.addEventListener('submit', formSubmit);

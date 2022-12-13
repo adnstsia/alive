@@ -4,7 +4,7 @@
     display: flex;
     border: 0;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     background: #000000;
     border-radius: 2px;
     justify-content: center;
@@ -27,7 +27,7 @@
 
   @media screen and (max-width: 527px) {
     .form__button {
-      height: 46px;
+      min-height: 46px;
       margin-top: 15px;
       font-size: 14px;
       line-height: 17px;
