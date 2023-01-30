@@ -23,18 +23,50 @@ function openPopup() {
 }
 
 function leavePopup() {
+  popup.classList.add('popup_closed');
+
+  setTimeout(function(){
   popup.classList.remove('popup_opened');
+  popup.classList.remove('popup_closed');
+  }, 500)
 }
 
 function formSubmit (evt) {
+  evt.preventDefault();
   if(popup.querySelector('.form__heading').textContent == 'Редактировать профиль'){
-    evt.preventDefault();
     avatarName.textContent = fullName.value;
     avatarDescription.textContent = description.value;
     leavePopup();
   }
-  else
+  else {
+    let cardName, cardLink;
+
+    cardName = fullName.value;
+    cardLink = description.value;
+
+    initialCards.unshift({
+      name: cardName,
+      link: cardLink
+    });
+    console.log(initialCards);
+  }
+
   leavePopup();
+  initialCards[0].forEach(function(element){
+    const cardsContainer = document.querySelector('.cards');
+    const cardTemplate = document.querySelector('#card').content;
+    const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
+
+    cardElement.querySelector('.card__image').src = element.link;
+    cardElement.querySelector('.card__image').alt = element.name;
+    cardElement.querySelector('.card__title').textContent = element.name;
+
+    cardElement.querySelector('.card__heart').addEventListener('click', function (evt) {
+      evt.target.classList.toggle('card__heart_active');
+    });
+
+    cardsContainer.append(cardElement);
+  })
 }
 
 avatarEdit.addEventListener('click', openPopup);
@@ -87,26 +119,17 @@ initialCards.forEach(function(element){
 function openAddPopup(){
   popup.classList.add('popup_opened');
   popup.querySelector('.form__heading').textContent = 'Новое место';
-  fullName.value = 'Картинка';
+  fullName.value = '';
   fullName.placeholder = 'Картинка';
-  description.value = 'Ссылка на картинку';
+  description.value = '';
   description.placeholder = 'Ссылка на картинку';
 }
 
 const addButton = document.querySelector('.add-button');
 addButton.addEventListener('click', openAddPopup);
 
-// like.addEventListener('click', function(){
-//   const cardElement = cardTemplate.querySelector('.card')
-//   cardElement.querySelector('.card__heart').target.classList.add('.card__heart_active');
-// })
+const a = 42;
+const b = 0;
 
-// const cardsContainer = document.querySelector('.cards');
-// const cardElement = cardsContainer.querySelector('.card');
-// const like = cardsContainer.querySelector('.card__heart');
-// function likeButton(){
-//   like.classList.add('.card__heart_active');
-//   console.log('bla bla bla');
-// }
-
-// like.addEventListener('click', likeButton);
+console.log(a || b);
+console.log(a && b);

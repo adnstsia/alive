@@ -1,22 +1,23 @@
-.card__heart {
-  margin:0;
+.card__trash {
+  margin: 0;
   padding: 0;
-  cursor: pointer;
-  height: 32px;
-  width: 32px;
+  background-image: url(../../../images/trash.svg);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 17.72px;
+  width: 18px;
   align-self: center;
   z-index: 1;
   transition: opacity linear .3s;
-  background-image: url('../../../images/heart.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
-  margin-left: 24px;
   border: 0;
   outline: none;
+  cursor: pointer;
 }
 
-.card__heart:hover {
+.card__trash:hover {
   opacity: .5;
 }
-
