@@ -73,6 +73,7 @@ avatarEdit.addEventListener('click', openPopup);
 closePopup.addEventListener('click', leavePopup);
 profileForm.addEventListener('submit', formSubmit);
 
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -113,6 +114,20 @@ initialCards.forEach(function(element){
     evt.target.classList.toggle('card__heart_active');
   });
 
+  cardElement.querySelector('.card__image').addEventListener('click', function(evt){
+    const popupImg = document.querySelector('.popupImg');
+    const closePopupImg = document.querySelector('.popupImg__close');
+
+    document.querySelector('.popupImg__photo').src = cardElement.querySelector('.card__image').src;
+
+    document.querySelector('.popupImg__text').textContent = cardElement.querySelector('.card__title').textContent;
+
+    popupImg.classList.add('popupImg_opened');
+
+    closePopupImg.addEventListener('click', function(){
+      popupImg.classList.remove('popupImg_opened');
+    })
+  })
   cardsContainer.append(cardElement);
 })
 
@@ -127,9 +142,3 @@ function openAddPopup(){
 
 const addButton = document.querySelector('.add-button');
 addButton.addEventListener('click', openAddPopup);
-
-const a = 42;
-const b = 0;
-
-console.log(a || b);
-console.log(a && b);
