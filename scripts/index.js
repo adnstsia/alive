@@ -118,6 +118,7 @@ const createCard = (element) => {
 
       document.querySelector('.popupImg__photo').src = cardElement.querySelector('.card__image').src;
       document.querySelector('.popupImg__text').textContent = cardElement.querySelector('.card__title').textContent;
+      document.querySelector('.popupImg__text').alt = cardElement.querySelector('.card__title').textContent;
       popupImg.classList.add('popupImg_opened');
 
     // закрытие попапа с фотокарточкой

@@ -2,6 +2,19 @@
   margin: 0;
   padding: 0;
   max-width: 816px;
-  max-height: 540px;
-  object-fit: contain;
+  height: 540px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 575px) {
+  .popupImg__photo {
+    height: 299px;
+  }
+}
+
+@media screen and (max-height: 629px) {
+  .popupImg__photo {
+    height: 530px;
+  }
 }

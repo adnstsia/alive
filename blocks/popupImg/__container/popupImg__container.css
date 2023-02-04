@@ -9,7 +9,8 @@
   position: relative;
   box-sizing: border-box;
   max-width: 816px;
-  max-height: 562px;
+  height: 602px;
+  gap: 10px
 }
 
 @media screen and (max-width: 947px) {
@@ -20,6 +21,13 @@
 
 @media screen and (max-width: 578px) {
   .popupImg__container {
-    width: 282px;
+    max-width: 240px;
+    height: 357px;
+  }
+}
+
+@media screen and (max-height: 629px) {
+  .popupImg__container {
+    height: 592px;
   }
 }

@@ -6,3 +6,9 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 575px) {
+  .popupImg_opened {
+    align-items: flex-start;
+    padding-top: 136px;
+  }
+}
