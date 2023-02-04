@@ -1,20 +1,8 @@
 .popupImg__photo {
   margin: 0;
   padding: 0;
-  max-width: 816px;
-  height: 540px;
+  max-width: 75vw;
+  max-height: 75vh;
   object-fit: cover;
   object-position: center;
-}
-
-@media screen and (max-width: 575px) {
-  .popupImg__photo {
-    height: 299px;
-  }
-}
-
-@media screen and (max-height: 629px) {
-  .popupImg__photo {
-    height: 530px;
-  }
 }
