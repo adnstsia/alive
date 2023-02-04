@@ -39,34 +39,22 @@ function formSubmit (evt) {
     leavePopup();
   }
   else {
-    let cardName, cardLink;
-
-    cardName = fullName.value;
-    cardLink = description.value;
+    const element =
+    {
+      name: cardName = fullName.value,
+      link: cardLink = description.value
+    }
 
     initialCards.unshift({
-      name: cardName,
-      link: cardLink
+      name: cardName = fullName.value,
+      link: cardLink = description.value
     });
-    console.log(initialCards);
+
+    renderCard(element);
+    leavePopup();
   }
 
-  leavePopup();
-  initialCards[0].forEach(function(element){
-    const cardsContainer = document.querySelector('.cards');
-    const cardTemplate = document.querySelector('#card').content;
-    const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
 
-    cardElement.querySelector('.card__image').src = element.link;
-    cardElement.querySelector('.card__image').alt = element.name;
-    cardElement.querySelector('.card__title').textContent = element.name;
-
-    cardElement.querySelector('.card__heart').addEventListener('click', function (evt) {
-      evt.target.classList.toggle('card__heart_active');
-    });
-
-    cardsContainer.append(cardElement);
-  })
 }
 
 avatarEdit.addEventListener('click', openPopup);
@@ -76,60 +64,80 @@ profileForm.addEventListener('submit', formSubmit);
 
 const initialCards = [
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    name: 'Кинкаку-дзи',
+    link: 'https://images.unsplash.com/photo-1675384201055-a5d68374fb7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Уиндермир',
+    link: 'https://images.unsplash.com/photo-1674468391816-c99157eb212e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=382&q=80'
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    name: 'Мон-Фалер, Италия',
+    link: 'https://images.unsplash.com/photo-1675191475318-d2bf6bad1200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80'
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    name: 'Плотина Гувера, США',
+    link: 'https://images.unsplash.com/photo-1674973188795-d692174fff62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    name: 'Сан-Франциско, США',
+    link: 'https://images.unsplash.com/photo-1661206444414-d440660c9ff0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    name: 'Озеро Морейн, Канада',
+    link: 'https://images.unsplash.com/photo-1536637706725-c96e8837df7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'
   }
 ];
 
-initialCards.forEach(function(element){
-  const cardsContainer = document.querySelector('.cards');
-  const cardTemplate = document.querySelector('#card').content;
-  const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
+const cardsContainer = document.querySelector('.cards');
 
-  cardElement.querySelector('.card__image').src = element.link;
-  cardElement.querySelector('.card__image').alt = element.name;
-  cardElement.querySelector('.card__title').textContent = element.name;
+const createCard = (element) => {
 
-  cardElement.querySelector('.card__heart').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('card__heart_active');
-  });
+    // карточка
+    const cardTemplate = document.querySelector('#card').content;
+    const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
 
-  cardElement.querySelector('.card__image').addEventListener('click', function(evt){
-    const popupImg = document.querySelector('.popupImg');
-    const closePopupImg = document.querySelector('.popupImg__close');
+    cardElement.querySelector('.card__image').src = element.link;
+    cardElement.querySelector('.card__image').alt = element.name;
+    cardElement.querySelector('.card__title').textContent = element.name;
 
-    document.querySelector('.popupImg__photo').src = cardElement.querySelector('.card__image').src;
+    // сердечко
+    cardElement.querySelector('.card__heart').addEventListener('click', function (evt) {
+      evt.target.classList.toggle('card__heart_active');
+    });
 
-    document.querySelector('.popupImg__text').textContent = cardElement.querySelector('.card__title').textContent;
-
-    popupImg.classList.add('popupImg_opened');
-
-    closePopupImg.addEventListener('click', function(){
-      popupImg.classList.remove('popupImg_opened');
+    // удаление карточки
+    cardElement.querySelector('.card__trash').addEventListener('click', () => {
+    cardElement.remove();
     })
-  })
-  cardsContainer.append(cardElement);
-})
+
+    // открытие попапа с фотокарточкой
+    cardElement.querySelector('.card__image').addEventListener('click', function(evt){
+      const popupImg = document.querySelector('.popupImg');
+      const closePopupImg = document.querySelector('.popupImg__close');
+
+      document.querySelector('.popupImg__photo').src = cardElement.querySelector('.card__image').src;
+      document.querySelector('.popupImg__text').textContent = cardElement.querySelector('.card__title').textContent;
+      popupImg.classList.add('popupImg_opened');
+
+    // закрытие попапа с фотокарточкой
+      closePopupImg.addEventListener('click', function(){
+        popupImg.classList.remove('popupImg_opened');
+      })
+    })
+
+  return cardElement;
+}
+
+// добавление 1ой карточки на страницу
+const renderCard = (element) => {
+  cardsContainer.prepend(createCard(element));
+}
+
+cardsContainer.append(...initialCards.map((element) => {
+  return createCard(element);
+}))
+
 
 function openAddPopup(){
   popup.classList.add('popup_opened');
