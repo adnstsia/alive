@@ -1,14 +1,3 @@
 .popupImg_opened {
   display: flex;
-  margin: 0;
-  padding: 0;
-  padding-top: 90px;
-  box-sizing: border-box;
-  align-items: flex-start;
-}
-
-@media screen and (max-width: 575px) {
-  .popupImg_opened {
-    padding-top: 136px;
-  }
 }

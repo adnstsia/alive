@@ -18,6 +18,8 @@ let avatarDescription = document.querySelector('.avatar__subtitle');
 
 function openPopup() {
   popup.classList.add('popup_opened');
+  popup.querySelector('.form__heading').textContent = 'Редактировать профиль';
+  popup.querySelector('.form__button').textContent = 'Сохранить';
   fullName.value = avatarName.textContent;
   description.value = avatarDescription.textContent;
 }
@@ -143,6 +145,7 @@ cardsContainer.append(...initialCards.map((element) => {
 function openAddPopup(){
   popup.classList.add('popup_opened');
   popup.querySelector('.form__heading').textContent = 'Новое место';
+  popup.querySelector('.form__button').textContent = 'Создать';
   fullName.value = '';
   fullName.placeholder = 'Картинка';
   description.value = '';
