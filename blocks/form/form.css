@@ -5,6 +5,10 @@
   flex-direction: column;
   border: 0;
   box-sizing: border-box;
+
+  border-radius: 10px;
+  position: relative;
+  background: #fff;
 }
 
 @media screen and (max-width: 527px) {

@@ -62,41 +62,17 @@
     <p class="footer__author">© 2020 Mesto Russia</p>
   </footer>
 
-  <!--Секция 0 - popup---------------------------------------------------------------------------------------------------------------------->
-  <section class="popup">
-    <template id="popup"></template>
+  <!--Секция 0.2 - popup_type_add---------------------------------------------------------------------------------------------------------------------->
+    <template id="popup">
+    <section class="popup">
     <div class="popup__container">
 
       <button class="popup__close" type="button">
       </button>
 
-      <form class="form" name="profilForm">
-        <h2 class="form__heading"></h2>
-
-        <input type="text" class="form__content form__content_type_full-name" id="name" name="name" placeholder="ФИО"
-          required>
-
-        <input type="text" class="form__content form__content_type_description" id="description" name="description"
-          placeholder="О себе" required>
-
-        <button type="submit" class="form__button"></button>
-
-      </form>
     </div>
   </section>
-
-  <!--Секция 0.1 - popupImg---------------------------------------------------------------------------------------------------------------------->
-  <section class="popupImg">
-    <div class="popupImg__container">
-
-      <button class="popupImg__close" type="button">
-      </button>
-
-      <img class="popupImg__photo" src="empty" alt="empty">
-      <h2 class="popupImg__text">Бла Бла Бла</h2>
-
-    </div>
-  </section>
+   </template>
 
 
   <script async src="scripts/index.js"></script>

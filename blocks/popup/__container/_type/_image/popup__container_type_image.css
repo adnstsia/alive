@@ -1,6 +1,4 @@
-.popupImg__container {
-  margin: 0 auto;
-  padding: 0;
+.popup__container_type_image {
   display: flex;
   border-radius: 10px;
   border: 0;

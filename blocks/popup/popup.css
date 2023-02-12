@@ -12,6 +12,8 @@
   z-index: 20;
   opacity: 0;
   animation: slowShow .5s forwards;
+  box-sizing: border-box;
+  padding-top: 22px;
 }
 
   @keyframes slowShow {

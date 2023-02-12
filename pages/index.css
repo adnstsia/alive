@@ -42,23 +42,29 @@
 
 /*popup*/
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/_closed/popup_closed.css);
-@import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close/popup__close.css);
 
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__container/_type/_add/popup__container_type_add.css);
+@import url(../blocks/popup/__container/_type/_edit/popup__container_type_edit.css);
+@import url(../blocks/popup/__container/_type/_image/popup__container_type_image.css);
+
+@import url(../blocks/popup/__photo/popup__photo.css);
+
+@import url(../blocks/popup/__text/popup__text.css);
+
+@import url(../blocks/popup/_closed/popup_closed.css);
+
+@import url(../blocks/popup/_opened/popup_opened.css);
+
+@import url(../blocks/popup/_type/_add/popup_type_add.css);
+@import url(../blocks/popup/_type/_edit/popup_type_edit.css);
+@import url(../blocks/popup/_type/_image/popup_type_image.css);
+
+/* Блок form */
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__button/form__button.css);
-@import url(../blocks/form/__heading/form__heading.css);
 @import url(../blocks/form/__content/form__content.css);
-@import url(../blocks/form/__content/_type/form__content_type_full-name.css);
-@import url(../blocks/form/__content/_type/form__content_type_description.css);
-
-/*popupImg*/
-@import url(../blocks/popupImg/popupImg.css);
-@import url(../blocks/popupImg/__close/popupImg__close.css);
-@import url(../blocks/popupImg/__container/popupImg__container.css);
-@import url(../blocks/popupImg/_closed/popupImg_closed.css);
-@import url(../blocks/popupImg/_opened/popupImg_opened.css);
-@import url(../blocks/popupImg/__photo/popupImg__photo.css);
-@import url(../blocks/popupImg/__text/popupImg__text.css);
+@import url(../blocks/form/__content/_type/_description/form__content_type_description.css);
+@import url(../blocks/form/__content/_type/_full-name/form__content_type_full-name.css);
+@import url(../blocks/form/__heading/form__heading.css);

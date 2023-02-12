@@ -1,8 +1,0 @@
-.popupImg_closed {
-  animation: slowHide .5s forwards;
-}
-
-@keyframes slowHide {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
