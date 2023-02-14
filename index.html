@@ -62,18 +62,56 @@
     <p class="footer__author">© 2020 Mesto Russia</p>
   </footer>
 
-  <!--Секция 0.2 - popup_type_add---------------------------------------------------------------------------------------------------------------------->
-    <template id="popup">
-    <section class="popup">
-    <div class="popup__container">
+
+  <!-- Секция 0.1 - popup_type_edit-------------------------------------------------------------------------------------------------------------------- -->
+  <section class="popup popup_type_edit">
+    <div class="popup__container popup__container_type_edit">
 
       <button class="popup__close" type="button">
       </button>
 
+      <form class="form">
+        <h2 class="form__heading">Редактировать профиль</h2>
+        <input class="form__content form__content_type_full-name" id="name" name="name" placeholder="ФИО"
+          required="required">
+        <input class="form__content form__content_type_description" id="description" name="description"
+          placeholder="О себе" required="required">
+        <button class="form__button">Сохранить</button>
+      </form>
     </div>
   </section>
-   </template>
 
+  <!--Секция 0.2 - popup_type_add---------------------------------------------------------------------------------------------------------------------->
+  <section class="popup popup_type_add">
+    <div class="popup__container popup__container_type_add">
+
+      <button class="popup__close" type="button">
+      </button>
+
+      <form class="form">
+        <h2 class="form__heading">Новое место</h2>
+
+        <input class="form__content form__content_type_full-name" id="placeName" name="placeName" placeholder="Название"
+          required="required">
+        <input class="form__content form__content_type_description" id="photoLink" name="photoLink"
+          placeholder="Ссылка на картинку" required="required">
+
+        <button class="form__button">Сохранить</button>
+      </form>
+    </div>
+  </section>
+
+  <!--Секция 0.3 - popup_type_image---------------------------------------------------------------------------------------------------------------------->
+  <section class="popup popup_type_image">
+    <div class="popup__container popup__container_type_image">
+
+      <button class="popup__close" type="button">
+      </button>
+
+      <img class="popup__photo" src="futureLink" alt="photo">
+      <h2 class="popup__text"></h2>
+    </div>
+  </section>
 
   <script async src="scripts/index.js"></script>
 </body>
