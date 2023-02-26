@@ -1,4 +1,3 @@
-
 // Массив карточек
 const initialCards = [
   {
@@ -47,11 +46,6 @@ const formContentDescription = popupEdit.querySelector(
 );
 const popupEditFormButton = popupEdit.querySelector(".form__button");
 
-const config = {
-  inputErrorClass: "form__content_type_error",
-};
-
-
 // Попап ДОБАВЛЕНИЕ КАРТОЧКИ
 const popupAdd = document.querySelector(".popup_type_add");
 const overlayAdd = popupAdd.querySelector(".overlay");
@@ -72,17 +66,23 @@ const overlayImage = popupImage.querySelector(".overlay");
 // Открытие попапа
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
-  document.addEventListener('keydown',  closeByEsc);
+  document.addEventListener("keydown", closeByEsc);
 }
 
 // закрытие попапа
 function closePopup(popupElement) {
   popupElement.classList.add("popup_closed");
-  document.removeEventListener('keydown',  closeByEsc);
+  document.removeEventListener("keydown", closeByEsc);
   setTimeout(function () {
     popupElement.classList.remove("popup_opened");
     popupElement.classList.remove("popup_closed");
   }, 500);
+}
+
+// Деактивация кнопки сабмит
+function disableSubmitButton(popupElement) {
+  popupElement.disabled = true;
+  popupElement.classList.add("form__button_inactive");
 }
 
 // Раздел попап РЕДАКТИРОВАНИЕ
@@ -91,7 +91,6 @@ function closePopup(popupElement) {
 const openEditPopup = () => {
   formContentFullName.value = avatarName.textContent;
   formContentDescription.value = avatarDescription.textContent;
-  console.log(formContentFullName.required);
   openPopup(popupEdit);
 };
 
@@ -107,6 +106,7 @@ function handleEditFormSubmit(evt) {
   avatarName.textContent = formContentFullName.value;
   avatarDescription.textContent = formContentDescription.value;
   closeEditPopup();
+  disableSubmitButton(popupEditFormButton);
 }
 
 // Раздел попап ДОБАВЛЕНИЕ КАРТОЧКИ
@@ -135,7 +135,8 @@ function handleAddFormSubmit(evt) {
 
   popupAddFormContentPlace.value = "";
   popupAddFormContentPhoto.value = "";
-  enableValidation();
+
+  disableSubmitButton(popupAddFormButton);
 }
 
 // Раздел попап КАРТИНКА + ОПИСАНИЕ
@@ -149,7 +150,7 @@ const closeImagePopup = () => {
 
 function closeByEsc(evt) {
   if (evt.key === "Escape") {
-    const openedPopup = document.querySelector('.popup_opened');
+    const openedPopup = document.querySelector(".popup_opened");
     closePopup(openedPopup);
   }
 }
@@ -221,4 +222,3 @@ cardsContainer.append(
     return createCard(cardData);
   })
 );
-
