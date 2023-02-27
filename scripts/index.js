@@ -80,9 +80,9 @@ function closePopup(popupElement) {
 }
 
 // Деактивация кнопки сабмит
-function disableSubmitButton(popupElement) {
-  popupElement.disabled = true;
-  popupElement.classList.add("form__button_inactive");
+function disableSubmitButton(button) {
+  button.disabled = true;
+  button.classList.add("form__button_inactive");
 }
 
 // Раздел попап РЕДАКТИРОВАНИЕ

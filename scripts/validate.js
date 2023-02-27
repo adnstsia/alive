@@ -6,6 +6,7 @@ const config = {
   formSelector: ".form__content",
   formContentForCheck: "form__content",
   formButtonSelector: ".form__button",
+  form: ".form"
 };
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
@@ -53,7 +54,7 @@ const setEventListeners = (formElement, config) => {
 };
 
 const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(".form"));
+  const formList = Array.from(document.querySelectorAll(config.form));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
