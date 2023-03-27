@@ -6,7 +6,7 @@
 
 ## <span style="color:3a79a6">**О**</span>писание
 
-Данный проект является учебным и сд.
+Данный проект является учебным.
 
 *Ссылка на GitHub Pages*: https://adnstsia.github.io/mesto/
 
