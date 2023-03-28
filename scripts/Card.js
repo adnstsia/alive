@@ -1,9 +1,4 @@
-
-
-
-
 // Импорты из модулей
-
 import { popupImage, imagePopupPhoto, imagePopupText } from "./index.js";
 import openPopup from "./index.js";
 

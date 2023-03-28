@@ -4,31 +4,22 @@ import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { config } from "./FormValidator.js";
 
-
 const formValidators = {};
 
-
 // Включение валидации
-
-function enableValidations (config) {
-
+function enableValidations(config) {
   const forms = Array.from(document.querySelectorAll(config.form));
 
- forms.forEach((formElement) => {
+  forms.forEach((formElement) => {
+    const validator = new FormValidator(formElement, config);
 
-  const validator = new FormValidator(formElement, config);
+    const formName = formElement.getAttribute("name");
 
-  // получаем данные из атрибута `name` у формы
-  const formName = formElement.getAttribute("name");
-
-  // вот тут в объект записываем под именем формы
-  formValidators[formName] = validator;
-  validator.enableValidation();
-});
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
 }
-
 enableValidations(config);
-
 
 // Нужные в работе констаты
 const buttonOpenAddCard = document.querySelector(".add-button");
@@ -79,7 +70,6 @@ function closePopup(popupElement) {
   }, 500);
 }
 
-
 // Раздел попап РЕДАКТИРОВАНИЕ
 
 // Открытие попапа РЕДАКТИРОВАНИЕ
@@ -93,6 +83,9 @@ const openEditPopup = () => {
 // Закрытие попапа РЕДАКТИРОВАНИЕ
 const closeEditPopup = () => {
   closePopup(popupEdit);
+
+  formValidators["edit-form"].resetValidation();
+
 };
 
 // Сабмит попапа РЕДАКТИРОВАНИЕ
@@ -103,7 +96,7 @@ function handleEditFormSubmit(evt) {
   avatarDescription.textContent = formContentDescription.value;
   closeEditPopup();
 
-  formValidators['edit-form'].resetValidation();
+  // formValidators["edit-form"].resetValidation();
 }
 
 // Раздел попап ДОБАВЛЕНИЕ КАРТОЧКИ
@@ -130,9 +123,9 @@ function handleAddFormSubmit(evt) {
   cardsContainer.prepend(createCard(element));
   closeAddPopup();
 
-  evt.target.reset()
+  evt.target.reset();
 
-  formValidators['add-form'].resetValidation();
+  formValidators["add-form"].resetValidation();
 }
 
 // Раздел попап КАРТИНКА + ОПИСАНИЕ
@@ -165,8 +158,10 @@ popupImage
   .querySelector(".popup__close")
   .addEventListener("click", closeImagePopup);
 
-popupEdit.querySelector('.form').addEventListener("submit", handleEditFormSubmit);
-popupAdd.querySelector('.form').addEventListener("submit", handleAddFormSubmit);
+popupEdit
+  .querySelector(".form")
+  .addEventListener("submit", handleEditFormSubmit);
+popupAdd.querySelector(".form").addEventListener("submit", handleAddFormSubmit);
 
 overlayEdit.addEventListener("mousedown", closeEditPopup);
 overlayAdd.addEventListener("mousedown", closeAddPopup);
@@ -174,17 +169,14 @@ overlayImage.addEventListener("mousedown", closeImagePopup);
 
 // Создание карточки
 const createCard = (item) => {
-
   const card = new Card(item, "#card");
   const cardElement = card.generateCard();
 
   return cardElement;
-}
+};
 
-// добавление имеющихся в изначальном массиве карточек на страницу
-cardsContainer.append(
-  ...initialCards.map(createCard)
-);
+// Добавление имеющихся в изначальном массиве карточек на страницу
+cardsContainer.append(...initialCards.map(createCard));
 
 // Экспорты
 export { popupImage, imagePopupPhoto, imagePopupText };
