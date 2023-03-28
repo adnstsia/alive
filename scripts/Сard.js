@@ -32,13 +32,9 @@ export default class Card {
     this._setEventListeners(); // вызовите _setEventListeners
 
     this._element.querySelector(".card__image").src = this._src;
-    imagePopupPhoto.src = this._element.querySelector(".card__image").src;
     this._element.querySelector(".card__image").alt = this._alt;
     this._element.querySelector(".card__title").textContent = this._textContent;
-    imagePopupText.textContent =
-      this._element.querySelector(".card__title").textContent;
-    imagePopupPhoto.alt =
-      this._element.querySelector(".card__title").textContent;
+
     return this._element;
   }
 
@@ -64,8 +60,13 @@ export default class Card {
   _cardOpen = () => {
     this._element
       .querySelector(".card__image")
-      .addEventListener("click", function () {
+      .addEventListener("click", () => {
+        imagePopupPhoto.src = this._src;
+        imagePopupPhoto.alt = this._alt;
+        imagePopupText.textContent = this._textContent;
         openPopup(popupImage);
       });
   };
 }
+
+// export { popupImage, imagePopupPhoto, imagePopupText };

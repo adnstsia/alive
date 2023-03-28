@@ -1,5 +1,6 @@
 // Импорты из модулей
 import initialCards from "./initalCards.js";
+// import { popupImage, imagePopupPhoto, imagePopupText } from "./initalCards.js";
 import Card from "./Сard.js";
 import FormValidator from "./FormValidator.js";
 import { config } from "./FormValidator.js";
