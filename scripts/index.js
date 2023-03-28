@@ -1,16 +1,34 @@
 // Импорты из модулей
 import initialCards from "./initalCards.js";
-// import { popupImage, imagePopupPhoto, imagePopupText } from "./initalCards.js";
-import Card from "./Сard.js";
+import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { config } from "./FormValidator.js";
 
-// Подключение валидации к каждой форме
-const forms = Array.from(document.querySelectorAll(config.form));
-forms.forEach((formElement) => {
-  const formValidator = new FormValidator(config, formElement);
-  formValidator.enableValidation();
+
+const formValidators = {};
+
+
+// Включение валидации
+
+function enableValidations (config) {
+
+  const forms = Array.from(document.querySelectorAll(config.form));
+
+ forms.forEach((formElement) => {
+
+  const validator = new FormValidator(formElement, config);
+
+  // получаем данные из атрибута `name` у формы
+  const formName = formElement.getAttribute("name");
+
+  // вот тут в объект записываем под именем формы
+  formValidators[formName] = validator;
+  validator.enableValidation();
 });
+}
+
+enableValidations(config);
+
 
 // Нужные в работе констаты
 const buttonOpenAddCard = document.querySelector(".add-button");
@@ -28,7 +46,6 @@ const formContentFullName = popupEdit.querySelector(
 const formContentDescription = popupEdit.querySelector(
   ".form__content_type_description"
 );
-const popupEditFormButton = popupEdit.querySelector(".form__button");
 
 // Попап ДОБАВЛЕНИЕ КАРТОЧКИ
 const popupAdd = document.querySelector(".popup_type_add");
@@ -39,7 +56,6 @@ const popupAddFormContentPlace = popupAdd.querySelector(
 const popupAddFormContentPhoto = popupAdd.querySelector(
   ".form__content_type_description"
 );
-const popupAddFormButton = popupAdd.querySelector(".form__button");
 
 // Попап КАРТИНКА + ОПИСАНИЕ
 const popupImage = document.querySelector(".popup_type_image");
@@ -63,11 +79,6 @@ function closePopup(popupElement) {
   }, 500);
 }
 
-// Деактивация кнопки сабмит
-function disableSubmitButton(button) {
-  button.disabled = true;
-  button.classList.add("form__button_inactive");
-}
 
 // Раздел попап РЕДАКТИРОВАНИЕ
 
@@ -91,7 +102,8 @@ function handleEditFormSubmit(evt) {
   avatarName.textContent = formContentFullName.value;
   avatarDescription.textContent = formContentDescription.value;
   closeEditPopup();
-  disableSubmitButton(popupEditFormButton);
+
+  formValidators['edit-form'].resetValidation();
 }
 
 // Раздел попап ДОБАВЛЕНИЕ КАРТОЧКИ
@@ -115,13 +127,12 @@ function handleAddFormSubmit(evt) {
     link: popupAddFormContentPhoto.value,
   };
 
-  renderCard(element);
+  cardsContainer.prepend(createCard(element));
   closeAddPopup();
 
-  popupAddFormContentPlace.value = "";
-  popupAddFormContentPhoto.value = "";
+  evt.target.reset()
 
-  disableSubmitButton(popupAddFormButton);
+  formValidators['add-form'].resetValidation();
 }
 
 // Раздел попап КАРТИНКА + ОПИСАНИЕ
@@ -154,27 +165,25 @@ popupImage
   .querySelector(".popup__close")
   .addEventListener("click", closeImagePopup);
 
-popupEditFormButton.addEventListener("click", handleEditFormSubmit);
-popupAddFormButton.addEventListener("click", handleAddFormSubmit);
+popupEdit.querySelector('.form').addEventListener("submit", handleEditFormSubmit);
+popupAdd.querySelector('.form').addEventListener("submit", handleAddFormSubmit);
 
 overlayEdit.addEventListener("mousedown", closeEditPopup);
 overlayAdd.addEventListener("mousedown", closeAddPopup);
 overlayImage.addEventListener("mousedown", closeImagePopup);
 
-// добавление одной карточки на страницу
-const renderCard = (item) => {
+// Создание карточки
+const createCard = (item) => {
+
   const card = new Card(item, "#card");
-  cardsContainer.prepend(card.generateCard());
-};
+  const cardElement = card.generateCard();
+
+  return cardElement;
+}
 
 // добавление имеющихся в изначальном массиве карточек на страницу
 cardsContainer.append(
-  ...initialCards.map((item) => {
-    const card = new Card(item, "#card");
-    const cardElement = card.generateCard();
-
-    return cardElement;
-  })
+  ...initialCards.map(createCard)
 );
 
 // Экспорты

@@ -1,4 +1,9 @@
+
+
+
+
 // Импорты из модулей
+
 import { popupImage, imagePopupPhoto, imagePopupText } from "./index.js";
 import openPopup from "./index.js";
 
@@ -22,24 +27,27 @@ export default class Card {
   }
 
   _setEventListeners = () => {
-    this._cardHeart();
-    this._cardRemove();
-    this._cardOpen();
+    this._putLike();
+    this._removeCard();
+    this._openCard();
   };
 
   generateCard() {
     this._element = this._getTemplate();
-    this._setEventListeners(); // вызовите _setEventListeners
 
-    this._element.querySelector(".card__image").src = this._src;
-    this._element.querySelector(".card__image").alt = this._alt;
+    this._cardImage = this._element.querySelector(".card__image");
+
+    this._cardImage.src = this._src;
+    this._cardImage.alt = this._alt;
     this._element.querySelector(".card__title").textContent = this._textContent;
+
+    this._setEventListeners();
 
     return this._element;
   }
 
-  // сердечко
-  _cardHeart = () => {
+  // поставить сердечко
+  _putLike = () => {
     this._element
       .querySelector(".card__heart")
       .addEventListener("click", function (evt) {
@@ -48,7 +56,7 @@ export default class Card {
   };
 
   // удаление карточки
-  _cardRemove = () => {
+  _removeCard = () => {
     this._element
       .querySelector(".card__trash")
       .addEventListener("click", () => {
@@ -57,7 +65,7 @@ export default class Card {
   };
 
   // открытие попапа с фотокарточкой
-  _cardOpen = () => {
+  _openCard = () => {
     this._element
       .querySelector(".card__image")
       .addEventListener("click", () => {
@@ -68,5 +76,3 @@ export default class Card {
       });
   };
 }
-
-// export { popupImage, imagePopupPhoto, imagePopupText };

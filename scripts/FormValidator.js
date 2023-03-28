@@ -10,7 +10,7 @@ export const config = {
 
 // Класс валидации форм
 export default class FormValidator {
-  constructor(config, formElement) {
+  constructor(formElement, config) {
     this._config = config;
     this._formElement = formElement;
     this._inputList = Array.from(
@@ -78,5 +78,12 @@ export default class FormValidator {
   enableValidation() {
     this._formElement.addEventListener("submit", (evt) => evt.preventDefault());
     this._setEventListeners();
+  }
+
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+    this._toggleButtonState();
   }
 }
