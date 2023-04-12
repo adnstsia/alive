@@ -1,15 +1,12 @@
-// Импорты из модулей
-import { popupImage, imagePopupPhoto, imagePopupText } from "./index.js";
-import openPopup from "./index.js";
-
 // Класс создания карточки
 export default class Card {
-  constructor(cardData, cardTemplate) {
+  constructor(cardData, cardTemplate, handleCardClick) {
     this._src = cardData.link;
     this._alt = cardData.name;
     this._textContent = cardData.name;
 
     this._cardTemplate = cardTemplate;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -64,10 +61,7 @@ export default class Card {
     this._element
       .querySelector(".card__image")
       .addEventListener("click", () => {
-        imagePopupPhoto.src = this._src;
-        imagePopupPhoto.alt = this._alt;
-        imagePopupText.textContent = this._textContent;
-        openPopup(popupImage);
+        this._handleCardClick(this._src, this._alt, this._textContent);
       });
   };
 }
