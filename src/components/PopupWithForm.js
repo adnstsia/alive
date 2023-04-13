@@ -7,7 +7,9 @@ export default class PopupWithForm extends Popup {
     this._submitCallback = submitCallback;
     this._form = this._popup.querySelector(".form");
     this._formInputs = this._form.querySelectorAll(".form__content");
-    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleSubmit = () => {
+      this._handleFormSubmit();
+    };
   }
 
   _getInputValues() {
@@ -28,9 +30,9 @@ export default class PopupWithForm extends Popup {
     this._form.reset();
   }
 
-  _handleSubmit(evt) {
-    evt.preventDefault();
-    this._submitCallback(this._getInputValues());
+  _handleFormSubmit() {
+    const formData = this._getInputValues();
+    this._submitCallback(formData);
     this.closePopup();
   }
 }
