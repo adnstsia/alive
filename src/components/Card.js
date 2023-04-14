@@ -58,10 +58,8 @@ export default class Card {
 
   // открытие попапа с фотокарточкой
   _openCard = () => {
-    this._element
-      .querySelector(".card__image")
-      .addEventListener("click", () => {
-        this._handleCardClick(this._src, this._alt, this._textContent);
-      });
+    this._cardImage.addEventListener("click", () => {
+      this._handleCardClick(this._src, this._alt, this._textContent);
+    });
   };
 }

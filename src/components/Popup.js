@@ -26,13 +26,18 @@ export default class Popup {
   }
 
   setEventListeners() {
-    this._popup.addEventListener("click", (evt) => {
-      if (
-        evt.target.classList.contains("popup") ||
-        evt.target.classList.contains("popup__close")
-      ) {
-        this.closePopup();
-      }
+    this._popup.querySelector(".popup__close").addEventListener("click", () => {
+      this.closePopup();
     });
-  }
+    this._popup.querySelector(".overlay").addEventListener("click", () => {
+      this.closePopup();
+    });
 }
+}
+
+
+
+
+
+
+
