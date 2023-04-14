@@ -9,7 +9,6 @@ export default class PicturePopup extends Popup {
   }
 
   openPopup(imageSrc, imageCaption) {
-    this.setEventListeners();
     this._image.src = imageSrc;
     this._image.alt = imageCaption;
     this._caption.textContent = imageCaption;

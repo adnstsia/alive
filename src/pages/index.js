@@ -19,17 +19,16 @@ const cardsContainer = document.querySelector(".cards");
 const popupElementImage = document.querySelector(".popup_type_image");
 const imagePopupPhoto = popupElementImage.querySelector(".popup__photo");
 const imagePopupText = popupElementImage.querySelector(".popup__text");
-const overlayImage = popupElementImage.querySelector(".overlay");
 const popupImage = new PicturePopup(
   ".popup_type_image",
   ".popup__photo",
   ".popup__text"
 );
+popupImage.setEventListeners();
 
 //  Попап ~редактирование~
 const popupEditElement = document.querySelector(".popup_type_edit");
 const buttonOpenEditCard = document.querySelector(".avatar__edit");
-const overlayEdit = popupEditElement.querySelector(".overlay");
 const formContentFullName = popupEditElement.querySelector(
   ".form__content_type_full-name"
 );
@@ -38,62 +37,44 @@ const formContentDescription = popupEditElement.querySelector(
 );
 
 // Хранение информации о пользователе
-let userInfo = new UserInfo({
+const userInfo = new UserInfo({
   nameSelector: ".avatar__title",
   infoSelector: ".avatar__subtitle",
 });
 
-// Сабмит попапа ~редактирование~
-function handleEditFormSubmit(event) {
-  if (event.defaultPrevented) return;
-
+// popupEdit.setEventListeners();
+const popupEdit = new PopupWithForm(".popup_type_edit", () => {
+  const { name, description } = popupEdit._getInputValues();
+  console.log(popupEdit._getInputValues());
   userInfo.setUserInfo({
-    name: formContentFullName.value,
-    info: formContentDescription.value,
+    name: name,
+    info: description,
   });
 
   closeEditPopup();
-  formValidators["edit-form"].resetValidation();
-
-  // Остановка действия по умолчанию после выполнения функции
-  event.defaultPrevented = true;
-  return false;
-}
-
-const popupEdit = new PopupWithForm(".popup_type_edit", handleEditFormSubmit);
+  console.log(userInfo.getUserInfo());
+});
+popupEdit.setEventListeners();
 
 // Попап ~добавление карточки~
-const popupAddElement = document.querySelector(".popup_type_add");
-const overlayAdd = popupAddElement.querySelector(".overlay");
-const popupAddFormContentPlace = popupAddElement.querySelector(
-  ".form__content_type_full-name"
-);
-const popupAddFormContentPhoto = popupAddElement.querySelector(
-  ".form__content_type_description"
-);
 const buttonOpenAddCard = document.querySelector(".add-button");
 
-function handleAddFormSubmit() {
+const popupAdd = new PopupWithForm(".popup_type_add", () => {
+  const { photoLink, placeName } = popupAdd._getInputValues();
   const newCard = createCard({
-    name: popupAddFormContentPlace.value,
-    link: popupAddFormContentPhoto.value,
+    name: placeName,
+    link: photoLink,
   });
+
   section.addItem(newCard);
+
   closeAddPopup();
-
-  popupAddElement.querySelector(".form").reset();
-
-  formValidators["add-form"].resetValidation();
-}
-
-const popupAdd = new PopupWithForm(".popup_type_add", handleAddFormSubmit);
+});
+popupAdd.setEventListeners();
 
 // Создание карточки
 const createCard = (item) => {
-  const card = new Card(item, "#card", (src, alt, text) => {
-    imagePopupPhoto.src = src;
-    imagePopupPhoto.alt = alt;
-    imagePopupText.textContent = text;
+  const card = new Card(item, "#card", (src, alt) => {
     popupImage.openPopup(src, alt);
   });
   const cardElement = card.generateCard();
@@ -126,17 +107,14 @@ function enableValidations(config) {
 }
 enableValidations(config);
 
-// Закрытие попапа ~картинка+описание~
-const closeImagePopup = () => {
-  popupImage.closePopup();
-};
-
 // Открытие попапа ~редактирование~
 const openEditPopup = () => {
-  formContentFullName.value = userInfo.getUserInfo().name;
-  formContentDescription.value = userInfo.getUserInfo().info;
+  const { name, info } = userInfo.getUserInfo();
+  formValidators["edit-form"].resetValidation();
 
-  popupEdit.setEventListeners();
+  formContentFullName.value = name;
+  formContentDescription.value = info;
+
   popupEdit.openPopup();
 };
 
@@ -147,7 +125,8 @@ const closeEditPopup = () => {
 
 // Открытие попапа ~добавление карточки~
 const openAddPopup = () => {
-  popupAdd.setEventListeners();
+  formValidators["add-form"].resetValidation();
+
   popupAdd.openPopup();
 };
 
@@ -159,10 +138,6 @@ const closeAddPopup = () => {
 // СЛУШАТЕЛИ
 buttonOpenEditCard.addEventListener("click", openEditPopup);
 buttonOpenAddCard.addEventListener("click", openAddPopup);
-
-overlayEdit.addEventListener("mousedown", closeEditPopup);
-overlayAdd.addEventListener("mousedown", closeAddPopup);
-overlayImage.addEventListener("mousedown", closeImagePopup);
 
 // ЭКСПОРТЫ
 export { popupImage, imagePopupPhoto, imagePopupText };
