@@ -44,8 +44,8 @@ const userInfo = new UserInfo({
 
 // popupEdit.setEventListeners();
 const popupEdit = new PopupWithForm(".popup_type_edit", () => {
-  const { name, description } = popupEdit._getInputValues();
-  console.log(popupEdit._getInputValues());
+  const { name, description } = popupEdit.getInputValues();
+  console.log(popupEdit.getInputValues());
   userInfo.setUserInfo({
     name: name,
     info: description,
@@ -60,7 +60,7 @@ popupEdit.setEventListeners();
 const buttonOpenAddCard = document.querySelector(".add-button");
 
 const popupAdd = new PopupWithForm(".popup_type_add", () => {
-  const { photoLink, placeName } = popupAdd._getInputValues();
+  const { photoLink, placeName } = popupAdd.getInputValues();
   const newCard = createCard({
     name: placeName,
     link: photoLink,
