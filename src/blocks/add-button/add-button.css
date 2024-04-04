@@ -1,18 +1,22 @@
 .add-button {
   display: flex;
-  width: 150px;
+  max-width: 150px;
+  width: 100%;
   height: 50px;
   justify-self: center;
   align-self: center;
-  border: 2px solid #FFFFFF;
-  border-radius: 2px;
-  transition: opacity linear .3s;
-  background-image: url('../../images/pluse.svg');
+  border: none;
+  transition: opacity linear 0.3s;
+  background-image: url("../../images/pluse.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
   outline: none;
   cursor: pointer;
+  margin-right: 0;
+  transition: margin-right 2s ease-in-out, width 2s ease-in-out;
+  animation: scaleButton 3s forwards;
+  box-sizing: border-box;
 }
 
 .add-button:hover {

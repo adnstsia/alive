@@ -10,6 +10,7 @@
   align-self: end;
   justify-content: center;
   border: 1px solid #FFFFFF;
+  border-radius: 8px;
   box-sizing: border-box;
   cursor: pointer;
   transition: opacity linear .3s;

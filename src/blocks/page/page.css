@@ -8,8 +8,9 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   min-height: 100vh;
-  background-color: #000000;
+  background-color: #09101ceb;
   display: flex;
   flex-direction: column;
   font-family: 'Inter', 'Helvatica', sans-serif;
+  overflow-x: hidden;
 }
