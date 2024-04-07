@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alive</title>
+  <link rel="stylesheet" href="pages/index.css">
 </head>
 
 <body class="page">
 
-  <!--Секция 1 - header---------------------------------------------------------------------------------------------------------------------->
+  <!--Section 1 - header---------------------------------------------------------------------------------------------------------------------->
 
   <header class="header">
-    <img class="header__logo" src="<%=require('./images/headerlogo.svg')%>" alt="Лого Место">
+    <img class="header__logo" src="images/headerlogo.svg" alt="Alive">
   </header>
 
   <main>
 
-    <!-- Секция 1.2 - line---------------------------------------------------------------------------------------------------------------------->
+    <!-- Section 1.2 - line---------------------------------------------------------------------------------------------------------------------->
 
     <div class="line"></div>
 
-    <!--Секция 2 - profile---------------------------------------------------------------------------------------------------------------------->
+    <!--Section 2 - profile---------------------------------------------------------------------------------------------------------------------->
 
     <section class="profile">
       <div class="avatar">
-        <img class="avatar__image" src="<%=require('./images/avatarPhoto.jpg')%>" alt="Фотопортрет Жака-Ив Кусто">
+        <img class="avatar__image" src="images/avatarPhoto.jpg" alt="Photo">
 
         <h1 class="avatar__title">Stasey</h1>
 
@@ -41,7 +42,7 @@
 
     </section>
 
-    <!--Секция 2 - cards---------------------------------------------------------------------------------------------------------------------->
+    <!--Section 2 - cards---------------------------------------------------------------------------------------------------------------------->
 
     <section class="cards">
 
@@ -66,7 +67,7 @@
   </footer>
 
 
-  <!-- Секция 0.1 - popup_type_edit-------------------------------------------------------------------------------------------------------------------- -->
+  <!-- Section 0.1 - popup_type_edit-------------------------------------------------------------------------------------------------------------------- -->
   <section class="popup popup_type_edit">
     <div class="overlay"></div>
     <div class="popup__container popup__container_type_edit">
@@ -75,13 +76,13 @@
 
       <form class="form" name="edit-form">
         <h2 class="form__heading">Edit profile</h2>
-        <input class="form__content form__content_type_full-name" id="fullname" name="name" placeholder="ФИО" required
-          minlength="2" maxlength="40">
+        <input class="form__content form__content_type_full-name" id="fullname" name="name" placeholder="Nickname"
+          required minlength="2" maxlength="40">
         <span class="fullname-error form__input-error"></span>
 
 
         <input class="form__content form__content_type_description" id="description" name="description"
-          placeholder="О себе" required="required" minlength="2" maxlength="200">
+          placeholder="About me" required="required" minlength="2" maxlength="200">
         <span class="description-error form__input-error"></span>
 
         <button class="form__button" disabled="disabled">Save</button>
@@ -89,7 +90,7 @@
     </div>
   </section>
 
-  <!--Секция 0.2 - popup_type_add---------------------------------------------------------------------------------------------------------------------->
+  <!--Section 0.2 - popup_type_add---------------------------------------------------------------------------------------------------------------------->
   <section class="popup popup_type_add">
     <div class="overlay"></div>
     <div class="popup__container popup__container_type_add">
@@ -113,7 +114,7 @@
     </div>
   </section>
 
-  <!--Секция 0.3 - popup_type_image---------------------------------------------------------------------------------------------------------------------->
+  <!--Section 0.3 - popup_type_image---------------------------------------------------------------------------------------------------------------------->
   <section class="popup popup_type_image">
     <div class="overlay"></div>
     <div class="popup__container popup__container_type_image">
@@ -127,7 +128,7 @@
   </section>
 
 
-
+  <script src="pages/index.js"></script>
 </body>
 
 </html>

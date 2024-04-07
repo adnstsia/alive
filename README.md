@@ -1,26 +1,25 @@
-# Проект: Mesto
+# Project: Mesto
 
-## **<span style="color:3a79a6">Обзор</span>**
-* Описание проекта
-* Применённые навыки и технологии + ссылка на GitHub Pages
+## **<span style="color:3a79a6">Overview</span>**
+* Project description
+* Skills and technologies used + GitHub Pages link
 
-## <span style="color:3a79a6">**О**</span>писание
+## <span style="color:3a79a6">**D**</span>escription
 
-Данный проект является учебным
+This project is educational.
 
-*Ссылка на GitHub Pages*: https://adnstsia.github.io/mesto/  
-P.S. Я настраиваю подключение к серверу, поэтому на данный момент сайт можно посмотреть только сохранив код  
-и запустив его у себя на компьютере (к примеру с помощью gitBush: -npm run dev-), но уже совсем скоро я это исправлю:)  
+*GitHub Pages link*: https://adnstsia.github.io/alive/
+P.S. I am configuring connection to the server, so currently the website can be viewed only by saving the code and running it on your computer (for example, using gitBush: -npm run dev-), but very soon I will fix this:)
 
-## <span style="color:3a79a6">**В**</span> этой работе я релизовала такие навыки и технологии как:
-- Flexbox-вёрстка
-- Grid-container
-- Позиционированние объектов
-- Оформление кода по стандартам БЭМ
-- Организация файловой структуры по стандартам БЭМ - подход Nested
-- Адаптивная вёрстка(подход Desktop-first)
-- JavaScript, pабота с DOM
-- Валидация форм
-- ООП
-- Работа с модулями, экспортами-импортами
-- Webpack
+## <span style="color:3a79a6">**I**</span>n this project, I have implemented the following skills and technologies:
+- Flexbox layout
+- Grid container
+- Object positioning
+- Code styling according to BEM standards
+- File structure organization according to BEM standards - Nested approach
+- Responsive layout (Desktop-first approach)
+- JavaScript, DOM manipulation
+- Form validation
+- OOP [main branch]
+- Module usage, exports-imports [main branch]
+- Webpack [main branch]
