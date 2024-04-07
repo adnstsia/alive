@@ -6,10 +6,9 @@
 
 ## <span style="color:3a79a6">**D**</span>escription
 
-This project is educational.
+This is a traning project.
 
 *GitHub Pages link*: https://adnstsia.github.io/alive/
-P.S. I am configuring connection to the server, so currently the website can be viewed only by saving the code and running it on your computer (for example, using gitBush: -npm run dev-), but very soon I will fix this:)
 
 ## <span style="color:3a79a6">**I**</span>n this project, I have implemented the following skills and technologies:
 - Flexbox layout
