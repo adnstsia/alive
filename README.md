@@ -6,7 +6,7 @@
 
 ## <span style="color:3a79a6">**D**</span>escription
 
-This project is traning.
+This is a traning project.
 
 *GitHub Pages link*: https://adnstsia.github.io/alive/
 
