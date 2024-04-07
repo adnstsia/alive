@@ -1,6 +1,6 @@
 import "./index.css";
 // Импорты из модулей
-import initialCards from "../initalCards.js";
+import initialCards from "../../initalCards.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import UserInfo from "../components/UserInfo.js";

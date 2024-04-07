@@ -5,6 +5,8 @@
   margin-bottom: 51px;
   display: flex;
   justify-content: space-between;
+  border: 2px solid white;
+  border-radius: 100px;
 }
 
 @media screen and (max-width: 904px) {
