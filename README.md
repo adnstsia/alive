@@ -1,4 +1,4 @@
-# Project: Mesto
+# Project: Alive
 
 ## **<span style="color:3a79a6">Overview</span>**
 * Project description
